@@ -1,8 +1,8 @@
 export default async function handler(req, res) {
   const apiKey = "RGAPI-861173dc-545e-4504-9426-c79e4bf5d2a7";
   const region = "jp1";
-  const name = req.query.name;  // 例: 'HomuraJin'
-  const tag = req.query.tag;    // 例: '焔守職人'
+  const name = req.query.name;
+  const tag = req.query.tag;
 
   if (!name || !tag) {
     res.status(400).json({ error: "nameとtagを指定してください" });
@@ -12,6 +12,7 @@ export default async function handler(req, res) {
   // 1. Riot ID からアカウント取得
   const riotAccountURL = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(name)}/${encodeURIComponent(tag)}?api_key=${apiKey}`;
   const riotAccountRes = await fetch(riotAccountURL);
+
   if (!riotAccountRes.ok) {
     res.status(404).json({ state: "not found", step: "riot-id", detail: await riotAccountRes.text() });
     return;
