@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const apiKey = "あなたのRiotAPIキー";
+  const apiKey = "RGAPI-861173dc-545e-4504-9426-c79e4bf5d2a7";
   const region = "jp1";
   const name = req.query.name;  // 例: 'HomuraJin'
   const tag = req.query.tag;    // 例: '焔守職人'
