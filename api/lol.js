@@ -1,9 +1,9 @@
 export default async function handler(req, res) {
   try {
-    const apiKey = "RGAPI-af626708-7db8-4a77-b351-1dbc83148e9a";
+    const apiKey = "RGAPI-49708c50-278d-46aa-83d3-eb4d8f22a249";
     const region = "jp1";
-    const name = req.query.name;
-    const tag = req.query.tag;
+    const name = req.query.name;  // 例: 'HomuraJin'
+    const tag = req.query.tag;    // 例: '焔守職人'
 
     if (!name || !tag) {
       res.status(400).json({ error: "nameとtagを指定してください" });
